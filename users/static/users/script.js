@@ -23,7 +23,7 @@ document.getElementById('search').addEventListener('input', function() {
                     </ul>
                     <div class="btn-container">
                         <a href="/users/delete_fruit/${fruit.id}"><button class="delete-btn">Delete</button></a>
-                        <a href="/users/update_fruit/${fruit.id}$"><button class="delete-btn">Update</button></a>
+                        <a href="/users/update_fruit/${fruit.id}"><button class="delete-btn">Update</button></a>
                     </div>
                 `;
                 
