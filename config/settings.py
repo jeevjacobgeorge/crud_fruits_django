@@ -122,10 +122,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-STATIC_URL = '/home/crudfruitsdjango/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+# STATIC_URL = '/home/crudfruitsdjango/static/'
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",
+# ]
 # MEDIA_URL = '/home/crudfruitsdjango/media/'
 # MEDIA_ROOT = BASE_DIR / 'media'
 
