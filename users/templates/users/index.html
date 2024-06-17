@@ -1,0 +1,42 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block title %}Fruit List{% endblock %}
+
+{% block content %}
+<!-- Pop-up message container -->
+
+<h1>Fruits</h1>
+<div class="btn-container">
+    <input type="text" id="search" placeholder="Search for fruits..." autocomplete="off">
+    <a href="/users/add_fruit"><button class="add-btn" >Add Fruit</button></a>
+</div>
+<ul class="fruit-list-ul">
+    <div class="fruit-container" id="fruit-container">
+        {% for fruit in fruits %}
+        <div class="fruit-card">
+            <div onclick="redirectToGoogle('{{ fruit.name }}{{ fruit.family }}{{ fruit.order }}{{ fruit.genus }}')">
+                <h2>{{ fruit.name }}</h2>
+                <p><strong>Family:</strong> {{ fruit.family }}</p>
+                <p><strong>Order:</strong> {{ fruit.order }}</p>
+                <p><strong>Genus:</strong> {{ fruit.genus }}</p>
+                <p >Nutritional Content:</p>
+                <ul>
+                    <li><strong>Calories:</strong> {{ fruit.nutrition.calories }}</li>
+                    <li><strong>Fat:</strong> {{ fruit.nutrition.fat }}</li>
+                    <li><strong>Sugar:</strong> {{ fruit.nutrition.sugar }}</li>
+                    <li><strong>Carbohydrates:</strong> {{ fruit.nutrition.carbohydrates }}</li>
+                    <li><strong>Protein:</strong> {{ fruit.nutrition.protein }}</li>
+                </ul>
+            </div>
+            <div class="btn-container">
+                <a href="/users/delete_fruit/{{ fruit.id }}"><button class="delete-btn">Delete</button></a>
+                <a href="/users/update_fruit/{{ fruit.id }}"><button class="delete-btn">Update</button></a>
+            </div>
+           
+        </div>
+        {% endfor %}
+    </div>
+</ul>
+<script src="{% static 'users/script.js' %}"></script>
+{% endblock %}

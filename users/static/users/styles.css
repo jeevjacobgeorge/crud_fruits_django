@@ -1,0 +1,426 @@
+html{
+    scroll-behavior: smooth;
+    width: 100%;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin:0;
+    background-color:#0a0a0a;
+    color:whitesmoke;
+}
+nav {
+    background-color: #1c1c1c;
+    color: #fff;
+    padding: 1em;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin-right: 1em;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+footer {
+    background-color: #1c1c1c;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.content {
+    padding: 2em;
+}
+
+header{
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 2em 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p,h3 {
+    margin: 0.5em 0 0;
+}
+
+.fruit-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2em;
+    
+}
+
+.fruit-card {
+    background-color: #000000;
+    border: 1px solid #716e6e;
+    outline-offset: 2px;
+    border-radius: 0.5em;
+    box-shadow: 0 2px 4px #0a0a0a;
+    margin: 1em;
+    width: 230px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s;
+    padding: 10px;   
+
+}
+
+.fruit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px #0a0a0a;
+    cursor: pointer;
+}
+
+.fruit-card img {
+    width: 100%;
+    height: auto;
+}
+
+.fruit-card h2 {
+    color: #fafafa;
+    margin: 0.5em 0;
+}
+
+.fruit-card p {
+    margin: 0.5em 0;
+    color: #828a92;
+}
+
+.fruit-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1em 0;
+    color: #828a92;
+}
+
+.fruit-card ul li {
+    margin: 0.5em 0;
+}
+#search ,.add-btn, .delete-btn{
+    padding: 10px 15px; /* Adjust padding as needed */
+    border: 1px solid #716e6e ; /* Add border */
+    border-radius: 20px; /* Round the corners */
+    background-color: #000000; /* Dark background color */
+    color: white; /* Text color */
+    font-size: 16px; /* Font size */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    outline: none; /* Remove default focus outline */
+    width: 100%;    
+  }
+#search{
+    width: 85%;
+}
+  
+  #search::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Placeholder text color */
+
+  }
+  
+  .popup {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f44336;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    padding: 16px;
+    z-index: 999;
+    display: none; /* Initially hidden */
+}
+
+.popup.show {
+    display: block; /* Show when 'show' class is added */
+}
+
+.popuptext {
+    font-size: 18px;
+}
+
+/* Animation for the pop-up message */
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.delete-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    
+}
+
+.delete-container h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.delete-container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.delete-container form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.delete-container input[type="submit"],
+.delete-container .cancel-link {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    color: #000000;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+
+}
+
+.delete-container input[type="submit"]:hover,
+.delete-container .cancel-link:hover {
+    opacity: 0.8;
+}
+
+.delete-container .cancel-link {
+    background-color: #f44336;
+}
+
+.delete-container .cancel-link:hover {
+    background-color: #cc372b;
+}
+
+
+
+/* Styles specific to the add fruit form */
+.add-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    width: 100%;
+    margin: 20px;
+}
+
+.add-container h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #f8f8f8;
+}
+
+.add-container .form-group {
+    margin-bottom: 15px;
+}
+
+.add-container label {
+    font-size: 16px;
+    color: #aaa;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.add-container input[type="text"],
+.add-container input[type="number"],
+.add-container select,
+.add-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+}
+
+.add-container input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    background-color: #4CAF50;
+    margin-top: 10px;
+}
+
+.add-container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.add-container .form-group.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-container .col-sm-2 {
+    flex: 0 0 20%;
+}
+
+.add-container .col-sm-4 {
+    flex: 0 0 70%;
+}
+
+.add-container .btn {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-container .btn:hover {
+    background-color: #0056b3;
+}
+
+.add-btn {
+    width: 150px;
+}
+
+.add-btn:hover,.delete-btn:hover {
+    color: #1a1a1a;             /* Dark text on hover */
+    background-color: #FAFAFA;  /* Green background on hover */
+    border-color: #ffffff;      /* White border on hover */
+    cursor: pointer;
+    transition: background-color 0.3s ease /* Transition effect */
+}
+
+.delete-btn{
+    margin-bottom: 12px;
+    width: 99%;
+}
+.btn-container{
+    display: flex;
+    justify-content: space-around;
+    gap:12px;
+
+}
+
+/* Main CSS file */
+.auth-container {
+    background-color: #1a1a1a;  /* Dark background */
+    color: #ffffff;             /* White text */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.auth-container h1 {
+    color: #ffffff;
+}
+
+.auth-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth-container form .form-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.auth-container form .form-group label {
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+}
+
+.auth-container form .form-group input[type="text"],
+.auth-container form .form-group input[type="password"],
+.auth-container form .form-group input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #4CAF50;  /* Green border */
+    border-radius: 5px;
+    background-color: #333;     /* Darker background for input fields */
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.auth-container form .btn-primary {
+    background-color: #4CAF50;  /* Green background */
+    border: none;
+    color: #1a1a1a;             /* Dark text */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.auth-container form .btn-primary:hover {
+    background-color: #ffffff;  /* White background on hover */
+    color: #4CAF50;             /* Green text on hover */
+}
+.nav{
+    padding-inline: 12px;
+}
+.nav-links{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.fruit-list-ul{
+    margin:0px;
+    padding-inline-start: 0px;
+}
+/* Responsive styles */
+@media (max-width: 600px) {
+    .auth-container, .delete-container, .add-container {
+        width: 90%;
+        padding:6px;
+        
+    }
+    .add-container input[type="text"],
+    .add-container input[type="number"],
+    .add-container select,
+    .add-container textarea {
+    max-width: 90%;
+    }
+    .btn-container{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .delete-btn{
+        width: 100%;
+        margin-block:0px;
+    }
+    .add-btn{
+        width: 50%;
+    }   
+
+}

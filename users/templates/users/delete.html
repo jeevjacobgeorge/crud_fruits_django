@@ -1,0 +1,16 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block title %}Delete Fruit{% endblock %}
+
+{% block content %}
+<div class="delete-container">
+    <h1>Delete Fruit</h1>
+    <p>Are you sure you want to delete <strong>{{ fruit.name }}</strong>?</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Yes, delete.">
+        <a href="{% url 'home' %}" class="cancel-link">Cancel</a>
+    </form>
+</div>
+{% endblock %}

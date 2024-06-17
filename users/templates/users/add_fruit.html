@@ -1,0 +1,89 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block title %}Add Fruit{% endblock %}
+
+{% block content %}
+<div class="add-container">
+    <h1>Add Fruit</h1>
+    <form method="POST" class="post-form" >
+        {% csrf_token %}
+        <div class="container">
+            <br>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <h3>Enter Fruit Details</h3>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Fruit Name:</label>
+                <div class="col-sm-4">
+                    {{ fruit_form.name }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Family:</label>
+                <div class="col-sm-4">
+                    {{ fruit_form.family }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Order:</label>
+                <div class="col-sm-4">
+                    {{ fruit_form.order }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Genus:</label>
+                <div class="col-sm-4">
+                    {{ fruit_form.genus }}
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <h3>Enter Nutritional Details</h3>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Calories:</label>
+                <div class="col-sm-4">
+                    {{ nutrition_form.calories }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Fat:</label>
+                <div class="col-sm-4">
+                    {{ nutrition_form.fat }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Sugar:</label>
+                <div class="col-sm-4">
+                    {{ nutrition_form.sugar }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Carbohydrates:</label>
+                <div class="col-sm-4">
+                    {{ nutrition_form.carbohydrates }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Protein:</label>
+                <div class="col-sm-4">
+                    {{ nutrition_form.protein }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
