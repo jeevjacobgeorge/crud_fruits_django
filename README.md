@@ -116,7 +116,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - Stack Overflow community
 
 ## Contact
-For any inquiries or support, please contact [your-email@example.com].
+For any inquiries or support, please contact [jeevjacobgeorge@gmail.com].
 ```
 
 Feel free to replace placeholders like `https://github.com/your-username/fruit-information-website.git` and `your-email@example.com` with actual data relevant to your project. This README provides a structured and informative guide to set up, use, and contribute to your Django project.
