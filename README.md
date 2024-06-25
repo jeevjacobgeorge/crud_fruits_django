@@ -1,4 +1,3 @@
-```markdown
 # Fruit Information Website
 
 ## Project Overview
